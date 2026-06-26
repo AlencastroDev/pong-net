@@ -1,6 +1,9 @@
-# binários compilados
+
 cliente/teste
 servidor/servidor
+CONTEXT.md
+README.md
 
 # objetos intermediários (caso use -c futuramente)
 *.o
+
