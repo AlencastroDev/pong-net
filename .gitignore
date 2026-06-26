@@ -1,0 +1,6 @@
+# binários compilados
+cliente/teste
+servidor/servidor
+
+# objetos intermediários (caso use -c futuramente)
+*.o
