@@ -15,6 +15,8 @@ int main() {
 
     InputJogador input = {};
     char senha_criada[8] = {};
+    char senha_entrada[8] = {};
+    int len_entrada = 0;
     srand(time(NULL));
 
     while (!WindowShouldClose()) {
@@ -40,7 +42,7 @@ int main() {
         Rectangle bastao1 = { BASTAO1_X, estado.bastao1_y, LARGURA_BASTAO, ALTURA_BASTAO };
         Rectangle bastao2 = { BASTAO2_X, estado.bastao2_y, LARGURA_BASTAO, ALTURA_BASTAO };
 
-        // botões do menu (calculados de constantes, não do estado)
+        
         const float BTN_LARGURA = 300.0f;
         const float BTN_ALTURA  = 50.0f;
         const float BTN_X       = LARGURA_TELA / 2.0f - BTN_LARGURA / 2.0f;
@@ -50,26 +52,57 @@ int main() {
         Rectangle btnEntrar = { BTN_X, BTN_Y + 70, BTN_LARGURA, BTN_ALTURA };
 
         Vector2 mousePoint = GetMousePosition();
-            
+        Tela tela_frame = tela_atual;
+
         bool mouseOnCriar = CheckCollisionPointRec(mousePoint, btnCriar);
         bool mouseOnEntrar = CheckCollisionPointRec(mousePoint, btnEntrar);
 
-        if (mouseOnCriar && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-            sprintf(senha_criada, "%06d", rand() % 1000000);
-            tela_atual = TELA_CRIAR;
-        }
-        if (mouseOnEntrar && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) tela_atual = TELA_ENTRAR;
-
-        // botões da TELA_CRIAR
         Rectangle btnConfirmar = { BTN_X, BTN_Y,      BTN_LARGURA, BTN_ALTURA };
         Rectangle btnVoltar    = { BTN_X, BTN_Y + 70, BTN_LARGURA, BTN_ALTURA };
+        Rectangle caixaTexto   = { BTN_X, BTN_Y - 80, BTN_LARGURA, BTN_ALTURA };
 
         bool mouseOnConfirmar = CheckCollisionPointRec(mousePoint, btnConfirmar);
         bool mouseOnVoltar    = CheckCollisionPointRec(mousePoint, btnVoltar);
+        bool mouseOnTexto     = CheckCollisionPointRec(mousePoint, caixaTexto);
 
-        if (tela_atual == TELA_CRIAR) {
+        if (tela_frame == TELA_MENU) {
+            if (mouseOnCriar && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                sprintf(senha_criada, "%06d", rand() % 1000000);
+                tela_atual = TELA_CRIAR;
+            }
+            if (mouseOnEntrar && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                senha_entrada[0] = '\0';
+                len_entrada = 0;
+                tela_atual = TELA_ENTRAR;
+            }
+        }
+
+        if (tela_frame == TELA_CRIAR) {
             if (mouseOnConfirmar && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) tela_atual = TELA_AGUARDANDO;
             if (mouseOnVoltar    && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) tela_atual = TELA_MENU;
+        }
+
+        if (tela_frame == TELA_ENTRAR) {
+            SetMouseCursor(mouseOnTexto ? MOUSE_CURSOR_IBEAM : MOUSE_CURSOR_DEFAULT);
+
+            int c = GetCharPressed();
+            while (c > 0) {
+                if (c >= '0' && c <= '9' && len_entrada < 6) {
+                    senha_entrada[len_entrada] = (char)c;
+                    len_entrada++;
+                    senha_entrada[len_entrada] = '\0';
+                }
+                c = GetCharPressed();
+            }
+            if (IsKeyPressed(KEY_BACKSPACE) && len_entrada > 0) {
+                len_entrada--;
+                senha_entrada[len_entrada] = '\0';
+            }
+
+            if (mouseOnConfirmar && IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && len_entrada == 6)
+                tela_atual = TELA_AGUARDANDO;
+            if (mouseOnVoltar && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+                tela_atual = TELA_MENU;
         }
 
         const char* textoCriar = "Criar Sala";
@@ -131,6 +164,24 @@ int main() {
 
             case TELA_ENTRAR:
                 ClearBackground(BLACK);
+                DrawText("Entrar em Sala",
+                    LARGURA_TELA / 2 - MeasureText("Entrar em Sala", 30) / 2, 80, 30, WHITE);
+                DrawText("Digite o codigo da sala:",
+                    LARGURA_TELA / 2 - MeasureText("Digite o codigo da sala:", fontSize) / 2,
+                    BTN_Y - 120, fontSize, LIGHTGRAY);
+                DrawRectangleRec(caixaTexto, mouseOnTexto ? GRAY : LIGHTGRAY);
+                DrawText(senha_entrada,
+                    caixaTexto.x + 10,
+                    caixaTexto.y + (caixaTexto.height - 30) / 2,
+                    30, DARKGRAY);
+                DrawRectangleRec(btnConfirmar, !mouseOnConfirmar ? LIGHTGRAY : GRAY);
+                DrawText("Entrar",
+                    btnConfirmar.x + (btnConfirmar.width  - MeasureText("Entrar", fontSize)) / 2,
+                    btnConfirmar.y + (btnConfirmar.height - fontSize) / 2, fontSize, DARKGRAY);
+                DrawRectangleRec(btnVoltar, !mouseOnVoltar ? LIGHTGRAY : GRAY);
+                DrawText("Voltar",
+                    btnVoltar.x + (btnVoltar.width  - MeasureText("Voltar", fontSize)) / 2,
+                    btnVoltar.y + (btnVoltar.height - fontSize) / 2, fontSize, DARKGRAY);
                 break;
 
             case TELA_JOGO:
@@ -146,7 +197,7 @@ int main() {
 
                 DrawText(TextFormat("%d", estado.placar1), LARGURA_TELA / 2 - 60, 10, 40, WHITE);
                 DrawText(TextFormat("%d", estado.placar2), LARGURA_TELA / 2 + 40, 10, 40, WHITE);
-                    
+                break;
             default:
                 break;
             }
