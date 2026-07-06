@@ -10,7 +10,7 @@ const float BTN_X       = LARGURA_TELA / 2.0f - BTN_LARGURA / 2.0f;
 const float BTN_Y       = ALTURA_TELA  / 2.0f - BTN_ALTURA  / 2.0f;
 const int   FONT_SIZE   = 20;
 
-static const char* SERVIDOR_IP    = "127.0.0.1";
+static const char* SERVIDOR_IP    = "alencastrodev.studio";
 static const int   SERVIDOR_PORTA = 7777;
 
 static int         sock        = -1;

@@ -2,8 +2,10 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <netdb.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <string.h>
 
 
 int criar_socket_servidor(int porta);
