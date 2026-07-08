@@ -10,7 +10,7 @@ const float BTN_X       = LARGURA_TELA / 2.0f - BTN_LARGURA / 2.0f;
 const float BTN_Y       = ALTURA_TELA  / 2.0f - BTN_ALTURA  / 2.0f;
 const int   FONT_SIZE   = 20;
 
-static const char* SERVIDOR_IP    = "alencastrodev.studio";
+static const char* SERVIDOR_IP    = "56.126.130.33";
 static const int   SERVIDOR_PORTA = 7777;
 
 static int         sock        = -1;
@@ -77,7 +77,7 @@ Tela processar_aguardando(char* senha_criada) {
 Tela processar_entrar(Vector2 mouse, char* senha_entrada, int* len) {
     int c = GetCharPressed();
     while (c > 0) {
-        if (c >= '0' && c <= '9' && *len < 6) {
+        if (c >= '0' && c <= '9' && *len < 4) {
             senha_entrada[*len] = (char)c;
             (*len)++;
             senha_entrada[*len] = '\0';
@@ -118,6 +118,16 @@ void desenhar_menu(Vector2 mouse) {
     bool hoverEntrar = CheckCollisionPointRec(mouse, btnEntrar);
 
     ClearBackground(BLACK);
+
+    const char* titulo    = "PONG NET";
+    const char* subtitulo = "Engenharia de Redes - UnB - 2026";
+    DrawText(titulo,
+        LARGURA_TELA / 2 - MeasureText(titulo, 60) / 2,
+        80, 60, WHITE);
+    DrawText(subtitulo,
+        LARGURA_TELA / 2 - MeasureText(subtitulo, 25) / 2,
+        155, 25, GRAY);
+
     DrawRectangleRec(btnCriar,  hoverCriar  ? GRAY : LIGHTGRAY);
     DrawRectangleRec(btnEntrar, hoverEntrar ? GRAY : LIGHTGRAY);
 

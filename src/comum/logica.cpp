@@ -1,10 +1,9 @@
 #include "logica.hpp"
-#include <iostream>
 
 void inicializar_estado(EstadoJogo* estado) {
     estado->bola.x              = LARGURA_TELA / 2.0f;
     estado->bola.y              = ALTURA_TELA / 2.0f;
-    estado->bola.vel_x          = 8.f;
+    estado->bola.vel_x          = 30.f;
     estado->bola.vel_y          = 7.f;
 
     estado->bastao1_y           = ALTURA_TELA / 2.0f - ALTURA_BASTAO / 2.0f;
@@ -76,31 +75,13 @@ void ponto_marcado(EstadoJogo* estado){
 
 void movimento_bastao(EstadoJogo* estado, InputJogador* input){
    
-    if(input->cima1){
-        if(estado->bastao1_y <= 0) estado->bastao1_y;
-        else{
-            estado->bastao1_y -= VEL_BASTAO;
-        }
+    if (input->cima1 && estado->bastao1_y > 0)
+        estado->bastao1_y -= VEL_BASTAO;
+    if (input->baixo1 && estado->bastao1_y + ALTURA_BASTAO < ALTURA_TELA)
+        estado->bastao1_y += VEL_BASTAO;
 
-    } 
-    if(input->baixo1) {
-       if(estado->bastao1_y + ALTURA_BASTAO >= ALTURA_TELA) estado->bastao1_y;
-        else{
-            estado->bastao1_y += VEL_BASTAO;
-        } 
-    }
-
-    if(input->cima2){
-        if(estado->bastao2_y <= 0) estado->bastao2_y;
-        else{
-            estado->bastao2_y -= VEL_BASTAO;
-        }
-
-    } 
-    if(input->baixo2) {
-       if(estado->bastao2_y + ALTURA_BASTAO  >= ALTURA_TELA) estado->bastao2_y;
-        else{
-            estado->bastao2_y += VEL_BASTAO;
-        } 
-    }
+    if (input->cima2 && estado->bastao2_y > 0)
+        estado->bastao2_y -= VEL_BASTAO;
+    if (input->baixo2 && estado->bastao2_y + ALTURA_BASTAO < ALTURA_TELA)
+        estado->bastao2_y += VEL_BASTAO;
 }
