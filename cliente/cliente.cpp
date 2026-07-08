@@ -4,6 +4,7 @@
 #include <raylib.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 int main() {
     InitWindow(LARGURA_TELA, ALTURA_TELA, "Pong Net");
@@ -28,22 +29,31 @@ int main() {
             input.cima2  = IsKeyDown(KEY_UP);
             input.baixo2 = IsKeyDown(KEY_DOWN);
 
-            // envia input pro servidor
+            atualizar_estado(&estado, &input);
+
             PacketInput pkt = { PACOTE_INPUT, get_num_jogador(),
                                 (uint8_t)(get_num_jogador() == 1 ? input.cima1 : input.cima2),
                                 (uint8_t)(get_num_jogador() == 1 ? input.baixo1 : input.baixo2) };
             enviar_para(get_sock(), &pkt, sizeof(pkt), get_addr_servidor());
 
-            // recebe estado do servidor
             PacketEstado est;
             sockaddr_in rem;
+
             if (receber_de(get_sock(), &est, sizeof(est), &rem) > 0 && est.tipo == PACOTE_ESTADO) {
-                estado.bola.x    = est.bola_x;
-                estado.bola.y    = est.bola_y;
-                estado.bastao1_y = est.bastao1_y;
-                estado.bastao2_y = est.bastao2_y;
-                estado.placar1   = est.placar1;
-                estado.placar2   = est.placar2;
+                estado.bola.x  = est.bola_x;
+                estado.bola.y  = est.bola_y;
+                estado.placar1 = est.placar1;
+                estado.placar2 = est.placar2;
+
+                if (get_num_jogador() == 1) {
+                    if (fabsf(est.bastao1_y - estado.bastao1_y) > 50.0f)
+                        estado.bastao1_y = est.bastao1_y;
+                    estado.bastao2_y = est.bastao2_y;
+                } else {
+                    if (fabsf(est.bastao2_y - estado.bastao2_y) > 50.0f)
+                        estado.bastao2_y = est.bastao2_y;
+                    estado.bastao1_y = est.bastao1_y;
+                }
             }
         }
 

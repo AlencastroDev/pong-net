@@ -4,6 +4,5 @@
 
 ### Vencedor
 
-### Conectar cliente com servidor
 
 
