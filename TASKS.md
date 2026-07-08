@@ -4,6 +4,5 @@
 
 ### Vencedor
 
-### Menu de pareamento
 
 
