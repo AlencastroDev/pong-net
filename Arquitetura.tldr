@@ -122,8 +122,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 280.1581083471826,
-			"y": 1067.0639795573386,
+			"x": 178.17934474922782,
+			"y": 866.6229614510138,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -228,8 +228,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 772.5223663195538,
-			"y": 307.6482848587287,
+			"x": 728.2106351508731,
+			"y": 330.97024863171856,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -265,8 +265,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -10.603775760107396,
-			"y": 851.6855902499677,
+			"x": -112.58253935806215,
+			"y": 651.2445721436429,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -307,8 +307,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 78.93421541892664,
-			"y": 906.7086881276366,
+			"x": -23.044548179028112,
+			"y": 706.2676700213118,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -351,16 +351,16 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 559.5340610678052,
-			"y": 97.57386590673957,
-			"z": 1.0327148477589125,
+			"x": 329.06526892445083,
+			"y": -221.78444428807396,
+			"z": 0.8531187958209843,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
 		},
 		{
-			"x": 755.423800579531,
-			"y": 265.5933275405985,
+			"x": 711.1120694108503,
+			"y": 288.9152913135884,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -389,7 +389,7 @@
 							"content": [
 								{
 									"type": "text",
-									"text": "Jogador 1"
+									"text": "Jogador 2"
 								}
 							]
 						}
@@ -401,8 +401,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 311.3975748123644,
-			"y": 847.4594278324914,
+			"x": 209.41881121440963,
+			"y": 647.0184097261666,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -487,8 +487,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 478.57139229804136,
-			"y": 969.9303121903511,
+			"x": 376.5926287000866,
+			"y": 769.4892940840263,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -531,8 +531,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -27.335391258051686,
-			"y": 1064.898791311714,
+			"x": -129.31415485600644,
+			"y": 864.4577732053891,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -586,8 +586,50 @@
 			"typeName": "binding"
 		},
 		{
-			"x": 572.7851077053799,
-			"y": 927.2715101562321,
+			"x": -72.99819054897866,
+			"y": 307.9647065602587,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:K4PTDqlP7M2CPvojYzOPI",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "m",
+				"w": 129.8369152086663,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": false,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Jogador 1"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aiCCA",
+			"typeName": "shape"
+		},
+		{
+			"x": 470.80634410742516,
+			"y": 726.8304920499073,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -641,8 +683,8 @@
 			"typeName": "binding"
 		},
 		{
-			"x": -52.487559555840846,
-			"y": 9.691805712770304,
+			"x": -52.48755955584086,
+			"y": 20.186689410615713,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -696,10 +738,69 @@
 			"typeName": "binding"
 		},
 		{
+			"x": 88.75910674082849,
+			"y": 348.6604644400032,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:9BaJ_jxZaazqxfjCVmScg",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "m",
+				"w": 161.5,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Jogo iniciado"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "afOfQ",
+			"typeName": "shape"
+		},
+		{
 			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:aWOqktg5ALFXzQlGdK9nr"
+				"shape:HwPH8YhIG9MLeNwSbUovn",
+				"shape:F5pIw7XDX_l78YCpA2KcX",
+				"shape:HOeM1X54L-Giqv04Cp7Qh",
+				"shape:YzyUUkYGYAcmLxywAP1Y3",
+				"shape:PCyOAPyiVpI6KTSLnwm3k",
+				"shape:0LDWU2lZQs2VnuT8xzlU-",
+				"shape:z_pquj6Br2zYdxM4WrL5F",
+				"shape:28UTkLWlCeqMdu-5fHz6D",
+				"shape:cgck6CcOyGBAY_Hgstxzk",
+				"shape:1uH6BrXIO2Hy2ElciOBtA",
+				"shape:UDwsIsp_mhKPH4TVLDIdr",
+				"shape:Yh4wUjd5eA4Il9sJBwjVL",
+				"shape:QKaoSMK7Dtj0yvPhGVaCG",
+				"shape:fEbFBDYWUXEr8p8sDXqAu",
+				"shape:jiP3iZhCyMU73dewLDJPE",
+				"shape:-9LukfX3MARhWG53TBi8D",
+				"shape:kfrn0ZLP4nMljkOBcNvyw",
+				"shape:PpFWBRpqaLbrcjotrhlBB"
 			],
 			"hoveredShapeId": null,
 			"erasingShapeIds": [],
@@ -711,8 +812,8 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": -44.433956998074564,
-			"y": 1022.8438339935838,
+			"x": -146.41272059602932,
+			"y": 822.402815887259,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -750,6 +851,50 @@
 			},
 			"parentId": "page:page",
 			"index": "aPihv",
+			"typeName": "shape"
+		},
+		{
+			"x": 265.09156867306876,
+			"y": 395.887673284528,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:z2QH4K9VC4r9xkJLUw1o9",
+			"type": "arrow",
+			"props": {
+				"kind": "arc",
+				"elbowMidPoint": 0.5,
+				"dash": "draw",
+				"size": "m",
+				"fill": "none",
+				"color": "black",
+				"labelColor": "black",
+				"bend": 0,
+				"start": {
+					"x": 0,
+					"y": 0
+				},
+				"end": {
+					"x": -197.14913032497861,
+					"y": 0
+				},
+				"arrowheadStart": "none",
+				"arrowheadEnd": "arrow",
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph"
+						}
+					]
+				},
+				"labelPosition": 0.5,
+				"font": "draw",
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "agZwb",
 			"typeName": "shape"
 		},
 		{
@@ -795,8 +940,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 132.4753335232036,
-			"y": 895.6276269819584,
+			"x": 30.49656992524885,
+			"y": 695.1866088756336,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -837,8 +982,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 272.679785398648,
-			"y": 926.7837555038495,
+			"x": 170.70102180069324,
+			"y": 726.3427373975247,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -916,8 +1061,45 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 6.494789979915481,
-			"y": 893.7405475680979,
+			"x": -55.89962480895578,
+			"y": 350.0196638783888,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:oIY0dV_XrPSJ_fRqqrLlc",
+			"type": "geo",
+			"props": {
+				"w": 80.60752420296507,
+				"h": 63.50895846294219,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"color": "black",
+				"labelColor": "black",
+				"fill": "none",
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph"
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "ahrhQ",
+			"typeName": "shape"
+		},
+		{
+			"x": -95.48397361803927,
+			"y": 693.2995294617731,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -953,8 +1135,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 124.9255935864852,
-			"y": 1031.5733704257057,
+			"x": 22.946829988530453,
+			"y": 831.1323523193809,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -995,8 +1177,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -69.58612529586372,
-			"y": -32.36315160535983,
+			"x": -69.58612529586374,
+			"y": -21.868267907514422,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1121,8 +1303,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 606.0545057614142,
-			"y": 955.7142752324844,
+			"x": 504.0757421634595,
+			"y": 755.2732571261596,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1163,8 +1345,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 75.33568295726468,
-			"y": 274.4003103821304,
+			"x": 464.81247796619476,
+			"y": 391.01012924707953,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1185,8 +1367,8 @@
 					"y": 0
 				},
 				"end": {
-					"x": 168.8384724784916,
-					"y": 2.446934383746253
+					"x": 206.46141201959756,
+					"y": 0.38237694744015016
 				},
 				"arrowheadStart": "none",
 				"arrowheadEnd": "arrow",
@@ -1226,24 +1408,6 @@
 		},
 		{
 			"meta": {},
-			"id": "binding:S0OQ9_wluyLUaI8qUmdnx",
-			"type": "arrow",
-			"fromId": "shape:bfssPNVm7R_jJf_Z8bgJ4",
-			"toId": "shape:XaEozdIMXopkTOHf6SAmm",
-			"props": {
-				"isPrecise": true,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.020479345931705917,
-					"y": 0.49338786179099525
-				},
-				"snap": "none",
-				"terminal": "end"
-			},
-			"typeName": "binding"
-		},
-		{
-			"meta": {},
 			"id": "page:page",
 			"name": "Page 1",
 			"index": "a1",
@@ -1263,7 +1427,7 @@
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
-				"type": "move",
+				"type": "default",
 				"rotation": 0
 			},
 			"isFocusMode": false,
@@ -1273,8 +1437,8 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 1700,
-				"h": 739
+				"w": 1126,
+				"h": 918
 			},
 			"insets": [
 				false,
@@ -1339,8 +1503,8 @@
 			"typeName": "binding"
 		},
 		{
-			"x": 697.7818978312507,
-			"y": 885.2485958713178,
+			"x": 595.803134233296,
+			"y": 684.807577764993,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1381,8 +1545,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 253.5596514541303,
-			"y": 890.2947132427471,
+			"x": 151.58088785617554,
+			"y": 689.8536951364223,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1418,8 +1582,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 383.886645291267,
-			"y": 973.6154207584451,
+			"x": 281.9078816933122,
+			"y": 773.1744026521203,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1512,8 +1676,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 269.89138212742796,
-			"y": 1056.4480455319028,
+			"x": 167.9126185294732,
+			"y": 856.007027425578,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1596,8 +1760,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 472.789768418404,
-			"y": 941.5723084961236,
+			"x": 370.8110048204492,
+			"y": 741.1312903897988,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,

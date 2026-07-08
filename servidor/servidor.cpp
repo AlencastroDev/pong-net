@@ -86,15 +86,15 @@ void handle_criar_sala(int sock, const sockaddr_in* remetente) {
     memcpy(resp.codigo, sala->codigo, sizeof(resp.codigo));
     enviar_para(sock, &resp, sizeof(resp), remetente);
 
-    cout<<"Sala criada: "<<sala->codigo;
+    cout << "Sala criada: " << sala->codigo << endl;
 }
 
 void handle_entrar_sala(int sock, const uint8_t* buffer, const sockaddr_in* remetente) {
     PacketMatchmaking* pkt  = (PacketMatchmaking*)buffer;
     Sala*              sala = buscar_por_codigo(pkt->codigo);
 
-    if (sala == NULL) { cout<<"Sala: "<<pkt->codigo<<"nao encontrada"; return; }
-    if (sala->j2_conectado) { cout<<"Sala: "<<pkt->codigo<<"esta cheia"; return; }
+    if (sala == NULL)        { cout << "Sala " << pkt->codigo << " nao encontrada" << endl; return; }
+    if (sala->j2_conectado) { cout << "Sala " << pkt->codigo << " esta cheia"     << endl; return; }
 
     sala->jogador2     = *remetente;
     sala->j2_conectado = true;
@@ -105,7 +105,7 @@ void handle_entrar_sala(int sock, const uint8_t* buffer, const sockaddr_in* reme
     enviar_para(sock, &p1, sizeof(p1), &sala->jogador1);
     enviar_para(sock, &p2, sizeof(p2), &sala->jogador2);
 
-    cout<<"Sala: "<<pkt->codigo<<"iniciada";
+    cout << "Sala " << pkt->codigo << " iniciada" << endl;
 }
 
 void handle_input(const uint8_t* buffer, const sockaddr_in* remetente) {
