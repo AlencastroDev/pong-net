@@ -2,11 +2,11 @@
 
 const int LARGURA_TELA      = 1280;
 const int ALTURA_TELA       = 800;
-const int ALTURA_BASTAO     = 125;
+const int ALTURA_BASTAO     = 150;
 const int LARGURA_BASTAO    = 8;
 const int BASTAO1_X         = 20;
 const int BASTAO2_X         = LARGURA_TELA - LARGURA_BASTAO - 20;
-const int RAIO_BOLA         = 6;
+const int RAIO_BOLA         = 12;
 const int VEL_BASTAO        = 12;
 
 struct Retangulo{
