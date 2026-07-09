@@ -3,7 +3,7 @@
 void inicializar_estado(EstadoJogo* estado) {
     estado->bola.x              = LARGURA_TELA / 2.0f;
     estado->bola.y              = ALTURA_TELA / 2.0f;
-    estado->bola.vel_x          = 30.f;
+    estado->bola.vel_x          = 8.f;
     estado->bola.vel_y          = 7.f;
 
     estado->bastao1_y           = ALTURA_TELA / 2.0f - ALTURA_BASTAO / 2.0f;
