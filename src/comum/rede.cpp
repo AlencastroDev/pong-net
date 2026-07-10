@@ -26,23 +26,20 @@ int criar_socket_servidor(int porta){
     return sock;
 }
 
-int criar_socket_cliente(const char* host, int porta, sockaddr_in* addr_servidor){
-    struct addrinfo hints, *res;
-    memset(&hints, 0, sizeof(hints));
-    hints.ai_family   = AF_INET;
-    hints.ai_socktype = SOCK_DGRAM;
-
-    char porta_str[8];
-    snprintf(porta_str, sizeof(porta_str), "%d", porta);
-
-    if (getaddrinfo(host, porta_str, &hints, &res) != 0)
-        return -1;
-
-    *addr_servidor = *(sockaddr_in*)res->ai_addr;
-    freeaddrinfo(res);
-
+int criar_socket_cliente(const char* ip, int porta, sockaddr_in* addr_servidor) {
     int sock = socket(AF_INET, SOCK_DGRAM, 0);
+    
+    if(sock <= 0 ){
+        return -1;
+    }
+
     fcntl(sock, F_SETFL, O_NONBLOCK);
+
+    memset(addr_servidor, 0, sizeof(*addr_servidor));
+    addr_servidor->sin_family = AF_INET;
+    addr_servidor->sin_port = htons(porta);
+    inet_pton(AF_INET, ip, &addr_servidor->sin_addr);
+
     return sock;
 }
 
